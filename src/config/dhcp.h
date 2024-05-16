@@ -49,16 +49,16 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * second timeout.
  */
 #define DHCP_REQ_START_TIMEOUT_SEC	0
-#define DHCP_REQ_END_TIMEOUT_SEC	10
-//#define DHCP_REQ_END_TIMEOUT_SEC	4	/* as per PXE spec */
+//#define DHCP_REQ_END_TIMEOUT_SEC	10
+#define DHCP_REQ_END_TIMEOUT_SEC	4	/* as per PXE spec */
 
 /*
  * A ProxyDHCP offer without PXE options also goes through a request
  * phase using these same parameters, but note the early break below.
  */
 #define DHCP_PROXY_START_TIMEOUT_SEC	0
-#define DHCP_PROXY_END_TIMEOUT_SEC	10
-//#define DHCP_PROXY_END_TIMEOUT_SEC	8	/* as per PXE spec */
+//#define DHCP_PROXY_END_TIMEOUT_SEC	10
+#define DHCP_PROXY_END_TIMEOUT_SEC	8	/* as per PXE spec */
 
 /*
  * A ProxyDHCP request timeout should not induce a failure condition,
@@ -76,17 +76,17 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * available after an elapsed time greater than 3 seconds, therefore
  * effectively only sending 3 tries at timeouts of 1, 2, 4.
  */
-#define PXEBS_START_TIMEOUT_SEC		1
-#define PXEBS_END_TIMEOUT_SEC		10
-//#define PXEBS_START_TIMEOUT_SEC	0	/* as per PXE spec */
-//#define PXEBS_END_TIMEOUT_SEC		8	/* as per PXE spec */
+//#define PXEBS_START_TIMEOUT_SEC		1
+//#define PXEBS_END_TIMEOUT_SEC		10
+#define PXEBS_START_TIMEOUT_SEC	        0	/* as per PXE spec */
+#define PXEBS_END_TIMEOUT_SEC		8	/* as per PXE spec */
 
 /*
  * Increment to the next PXE Boot server, if available, after this
  * this much time has elapsed.
  */
-#define PXEBS_MAX_TIMEOUT_SEC		3
-//#define PXEBS_MAX_TIMEOUT_SEC		7	/* as per PXE spec */
+//#define PXEBS_MAX_TIMEOUT_SEC		3
+#define PXEBS_MAX_TIMEOUT_SEC		7	/* as per PXE spec */
 
 #include <config/local/dhcp.h>
 
