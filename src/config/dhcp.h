@@ -19,10 +19,10 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * The PXE spec indicates discover request are sent 4 times, with
  * timeouts of 4, 8, 16, 32 seconds.  iPXE by default uses 1, 2, 4, 8.
  */
-//#define DHCP_DISC_START_TIMEOUT_SEC	1
-//#define DHCP_DISC_END_TIMEOUT_SEC	10
-#define DHCP_DISC_START_TIMEOUT_SEC	4	/* as per PXE spec */
-#define DHCP_DISC_END_TIMEOUT_SEC	32	/* as per PXE spec */
+#define DHCP_DISC_START_TIMEOUT_SEC	1
+#define DHCP_DISC_END_TIMEOUT_SEC	10
+//#define DHCP_DISC_START_TIMEOUT_SEC	4	as per PXE spec
+//#define DHCP_DISC_END_TIMEOUT_SEC	32	as per PXE spec
 
 /*
  * Maximum number of discovery deferrals due to blocked links
@@ -36,8 +36,8 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * timeout for it.  The PXE spec indicates waiting through the 4 & 8
  * second timeouts, iPXE by default stops after 2.
  */
-//#define DHCP_DISC_PROXY_TIMEOUT_SEC	2
-#define DHCP_DISC_PROXY_TIMEOUT_SEC	11	/* as per PXE spec */
+#define DHCP_DISC_PROXY_TIMEOUT_SEC	2
+//#define DHCP_DISC_PROXY_TIMEOUT_SEC	11	/* as per PXE spec */
 
 /*
  * Per the PXE spec, requests are also tried 4 times, but at timeout
@@ -49,8 +49,8 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * second timeout.
  */
 #define DHCP_REQ_START_TIMEOUT_SEC	0
-//#define DHCP_REQ_END_TIMEOUT_SEC	10
-#define DHCP_REQ_END_TIMEOUT_SEC	4	/* as per PXE spec */
+#define DHCP_REQ_END_TIMEOUT_SEC	10
+//#define DHCP_REQ_END_TIMEOUT_SEC	4	/* as per PXE spec */
 
 /*
  * A ProxyDHCP offer without PXE options also goes through a request
@@ -66,8 +66,8 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * The iPXE default value of 2 breaks at the first timeout after 2
  * seconds, which will be after the 2 second timeout.
  */
-//#define DHCP_REQ_PROXY_TIMEOUT_SEC	2
-#define DHCP_REQ_PROXY_TIMEOUT_SEC	7	/* as per PXE spec */
+#define DHCP_REQ_PROXY_TIMEOUT_SEC	2
+//#define DHCP_REQ_PROXY_TIMEOUT_SEC	7	/* as per PXE spec */
 
 /*
  * Per the PXE spec, a PXE boot server request is also be retried 4
@@ -76,17 +76,17 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * available after an elapsed time greater than 3 seconds, therefore
  * effectively only sending 3 tries at timeouts of 1, 2, 4.
  */
-//#define PXEBS_START_TIMEOUT_SEC		1
-//#define PXEBS_END_TIMEOUT_SEC		10
-#define PXEBS_START_TIMEOUT_SEC	        0	/* as per PXE spec */
-#define PXEBS_END_TIMEOUT_SEC		8	/* as per PXE spec */
+#define PXEBS_START_TIMEOUT_SEC		1
+#define PXEBS_END_TIMEOUT_SEC		10
+//#define PXEBS_START_TIMEOUT_SEC	        0	/* as per PXE spec */
+//#define PXEBS_END_TIMEOUT_SEC		8	/* as per PXE spec */
 
 /*
  * Increment to the next PXE Boot server, if available, after this
  * this much time has elapsed.
  */
-//#define PXEBS_MAX_TIMEOUT_SEC		3
-#define PXEBS_MAX_TIMEOUT_SEC		7	/* as per PXE spec */
+#define PXEBS_MAX_TIMEOUT_SEC		3
+//#define PXEBS_MAX_TIMEOUT_SEC		7	/* as per PXE spec */
 
 #include <config/local/dhcp.h>
 
