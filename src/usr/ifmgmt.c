@@ -297,11 +297,11 @@ int ifconf ( struct net_device *netdev,
 	}
 
 	/* Wait for configuration to complete */
-	printf ( "Configuring %s%s%s(%s %s) (timeout=%lu)",
+	printf ( "Configuring %s%s%s(%s %s) (timeout=%u)",
 		 ( configurator ? "[" : "" ),
 		 ( configurator ? configurator->name : "" ),
 		 ( configurator ? "] " : "" ),
 		 netdev->name, netdev->ll_protocol->ntoa ( netdev->ll_addr ),
-		 timeout);
+		 (unsigned int) timeout);
 	return ifpoller_wait ( netdev, configurator, timeout, ifconf_progress );
 }
