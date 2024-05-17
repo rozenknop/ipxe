@@ -409,7 +409,7 @@ int netboot ( struct net_device *netdev ) {
 	{
 		if ( ( rc = ifconf ( netdev, NULL, 0 ) ) != 0  && tries != 4)
 			printf("Encore un essai !\n");
-		else break
+		else break;
 	}
 	if ( rc != 0 )
 		goto err_dhcp;
