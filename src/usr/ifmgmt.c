@@ -297,7 +297,7 @@ int ifconf ( struct net_device *netdev,
 	}
 
 	/* Wait for configuration to complete */
-	printf ( "Configuring %s%s%s(%s %s) (timeout=%ul)",
+	printf ( "Configuring %s%s%s(%s %s) (timeout=%lu)",
 		 ( configurator ? "[" : "" ),
 		 ( configurator ? configurator->name : "" ),
 		 ( configurator ? "] " : "" ),
