@@ -405,7 +405,11 @@ int netboot ( struct net_device *netdev ) {
 
 	/* Configure device */
 	if ( ( rc = ifconf ( netdev, NULL, 0 ) ) != 0 )
-		goto err_dhcp;
+	{
+		printf("Second essai !\n");
+		if ( ( rc = ifconf ( netdev, NULL, 0 ) ) != 0 )
+			goto err_dhcp;
+	}
 	route();
 
 	/* Try PXE menu boot, if applicable */
