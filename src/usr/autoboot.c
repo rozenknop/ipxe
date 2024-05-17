@@ -394,7 +394,7 @@ int netboot ( struct net_device *netdev ) {
 	struct uri *root_path;
 	char *san_filename;
 	int rc;
-
+	int tries;
 	/* Close all other network devices */
 	close_other_netdevs ( netdev );
 
@@ -404,12 +404,15 @@ int netboot ( struct net_device *netdev ) {
 	ifstat ( netdev );
 
 	/* Configure device */
-	if ( ( rc = ifconf ( netdev, NULL, 0 ) ) != 0 )
+	
+	for (tries = 0; tries < 5; ++ tries)
 	{
-		printf("Second essai !\n");
-		if ( ( rc = ifconf ( netdev, NULL, 0 ) ) != 0 )
-			goto err_dhcp;
+		if ( ( rc = ifconf ( netdev, NULL, 0 ) ) != 0  && tries != 4)
+			printf("Encore un essai !\n");
+		else break
 	}
+	if ( rc != 0 )
+		goto err_dhcp;
 	route();
 
 	/* Try PXE menu boot, if applicable */
